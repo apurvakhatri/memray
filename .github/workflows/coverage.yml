@@ -63,6 +63,9 @@ jobs:
       - name: Compute C++ coverage
         run: |
           make ccoverage
+      - name: Show files
+        run: |
+          ls -al
       - name: Upload {P,C}ython report to Codecov
         uses: codecov/codecov-action@v3
         with:

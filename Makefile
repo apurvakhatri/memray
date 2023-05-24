@@ -6,7 +6,7 @@ CLANG_FORMAT ?= clang-format
 UPSTREAM_GIT_REMOTE ?= origin
 DOCSBUILDDIR := docs/_build
 HTMLDIR := $(DOCSBUILDDIR)/html
-PIP_INSTALL=$(PYTHON) -m pip install
+PIP_INSTALL=$(PYTHON) -m pip install #Irrelevant comment added
 
 reporters_path := ./src/memray/reporters
 js_files := $(wildcard $(reporters_path)/assets/*.js)
@@ -103,9 +103,9 @@ ccoverage:  ## Run the test suite, with C++ code coverage
 	CFLAGS="$(CFLAGS) -O0 -pg --coverage" $(MAKE) build
 	$(MAKE) check
 	gcov -i build/*/src/memray/_memray -i -d
-	lcov --capture --directory .  --output-file memray.info
-	lcov --extract memray.info '*/src/memray/*' --output-file memray.info
-	genhtml memray.info --output-directory memray-coverage
+	lcov --capture --directory .  --output-file cppcoverage.lcov
+	lcov --extract cppcoverage.lcov '*/src/memray/_memray/*' --output-file cppcoverage.lcov
+	genhtml *coverage.lcov --branch-coverage --output-directory memray-coverage
 	find . | grep -E '(\.gcda|\.gcno|\.gcov\.json\.gz)' | xargs rm -rf
 
 .PHONY: format
