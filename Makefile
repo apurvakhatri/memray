@@ -104,7 +104,7 @@ ccoverage:  ## Run the test suite, with C++ code coverage
 	$(MAKE) check
 	gcov -i build/*/src/memray/_memray -i -d
 	lcov --capture --directory .  --output-file memray.info
-	lcov --extract memray.info '*/src/memray/*' --output-file memray.info
+	lcov --extract memray.info '*/src/memray/_memray/*' --output-file memray.info
 	genhtml memray.info --output-directory memray-coverage
 	find . | grep -E '(\.gcda|\.gcno|\.gcov\.json\.gz)' | xargs rm -rf
 
