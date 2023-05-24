@@ -6,7 +6,7 @@ CLANG_FORMAT ?= clang-format
 UPSTREAM_GIT_REMOTE ?= origin
 DOCSBUILDDIR := docs/_build
 HTMLDIR := $(DOCSBUILDDIR)/html
-PIP_INSTALL=$(PYTHON) -m pip install
+PIP_INSTALL=$(PYTHON) -m pip install #Irrelevant comment added
 
 reporters_path := ./src/memray/reporters
 js_files := $(wildcard $(reporters_path)/assets/*.js)
