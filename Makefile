@@ -2,6 +2,7 @@ PYTHON ?= python
 NPM ?= npm
 CLANG_FORMAT ?= clang-format
 
+
 # Doc generation variables
 UPSTREAM_GIT_REMOTE ?= origin
 DOCSBUILDDIR := docs/_build
