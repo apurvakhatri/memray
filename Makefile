@@ -153,6 +153,7 @@ clean:  ## Clean any built/generated artifacts
 	rm -f src/memray/_memray.cpp
 	rm -rf memray-coverage
 	rm -rf node_modules
+	rm -f cppcoverage.lcov
 
 .PHONY: bump_version
 bump_version:
