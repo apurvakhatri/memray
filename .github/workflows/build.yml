@@ -69,6 +69,9 @@ jobs:
   test_in_alpine:
     name: "Test in Alpine Linux"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: sh
     container:
       image: alpine
       options: --cap-add=SYS_PTRACE
@@ -84,7 +87,7 @@ jobs:
       - name: Build and install lcov
         run: |
           cd lcov
-          make install SHELL=/bin/sh
+          make install
       - name: Create virtual environment
         run: |
           python3 -m venv /venv
