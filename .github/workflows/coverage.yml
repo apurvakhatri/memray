@@ -57,12 +57,12 @@ jobs:
       - name: Add ./node_modules/.bin to PATH
         run: |
           export PATH="./node_modules/.bin:$PATH"
-      - name: Compute Python + Cython coverage
-        run: |
-          make pycoverage
       - name: Compute C++ coverage
         run: |
           make ccoverage
+      - name: Compute Python + Cython coverage
+        run: |
+          make pycoverage
       - name: Upload C++ report to Codecov
         uses: codecov/codecov-action@v3
         with:
