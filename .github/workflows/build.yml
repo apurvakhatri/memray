@@ -84,7 +84,7 @@ jobs:
       - name: Build and install lcov
         run: |
           cd lcov
-          make install
+          make install SHELL=/bin/sh
       - name: Create virtual environment
         run: |
           python3 -m venv /venv
