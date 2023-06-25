@@ -87,6 +87,7 @@ jobs:
         run: |
           cd lcov
           make install
+          cd ..
       - name: Create virtual environment
         run: |
           python3 -m venv /venv
